@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F6F2">
+    <meta name="description" content="Translate text between multiple languages quickly and easily.">
+
+    <title>Translator | Simple & Fast Translation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="brand" href="#" aria-label="Translator home">
+            <span class="brand-icon">A<span>文</span></span>
+            <span>Translator</span>
+        </a>
+
+        <span class="nav-caption">Simple. Fast. Free.</span>
+    </header>
+
+    <main class="container">
+        <section class="translator-card" aria-label="Text translator">
+
+            <div class="translator-heading">
+                <h1>Text Translator</h1>
+                <p>Translate between languages with ease.</p>
+            </div>
+
+            <div class="translation-area">
+
+                <!-- Source language -->
+                <section class="language-panel source-panel">
+                    <div class="panel-heading">
+                        <label for="fselect">From</label>
+
+                        <div class="language-actions">
+                            <button type="button" class="icon-button" id="fromSpeaker" title="Listen to source text"
+                                aria-label="Listen to source text">
+                                <img src="speaker.svg" alt="">
+                            </button>
+
+                            <button type="button" class="icon-button" id="fromCopy" title="Copy source text"
+                                aria-label="Copy source text">
+                                <img src="copy.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <select id="fselect" aria-label="Source language"></select>
+
+                    <div class="text-wrapper">
+                        <textarea id="fromText" maxlength="5000" placeholder="Enter your text here..."
+                            aria-label="Text to translate"></textarea>
+
+                        <div class="text-footer">
+                            <span id="charCount">0 / 5000</span>
+                            <button type="button" id="clearText" class="clear-button" aria-label="Clear source text"
+                                title="Clear text">&times;</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Swap languages -->
+                <div class="swap-wrapper">
+                    <button type="button" id="swapLanguages" class="swap-button" title="Swap languages"
+                        aria-label="Swap source and target languages">
+                        <span aria-hidden="true">&#8644;</span>
+                    </button>
+                </div>
+
+                <!-- Target language -->
+                <section class="language-panel target-panel">
+                    <div class="panel-heading">
+                        <label for="sselect">To</label>
+
+                        <div class="language-actions">
+                            <button type="button" class="icon-button" id="toSpeaker" title="Listen to translation"
+                                aria-label="Listen to translation">
+                                <img src="speaker.svg" alt="">
+                            </button>
+
+                            <button type="button" class="icon-button" id="toCopy" title="Copy translation"
+                                aria-label="Copy translation">
+                                <img src="copy.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <select id="sselect" aria-label="Target language"></select>
+
+                    <div class="text-wrapper output-wrapper">
+                        <textarea id="toText" placeholder="Translated text will appear here..."
+                            aria-label="Translated text" readonly></textarea>
+                    </div>
+                </section>
+            </div>
+
+            <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+
+            <button type="button" id="transfer" class="translate-button">
+                <span class="translate-icon" aria-hidden="true">文</span>
+                <span id="buttonText">Translate</span>
+            </button>
+        </section>
+
+        <footer class="page-footer">
+            Simple. Fast. Free Translation.
+        </footer>
+    </main>
+
+    <script src="countries.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
